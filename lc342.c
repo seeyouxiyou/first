@@ -2,16 +2,7 @@
 #include<stdio.h>
 
 int isPowerOfFour(int num) {
-    if (num == 1)
-        return 1;
-    int i = 0;
-    unsigned int sum = 4;
-    for(;i < 15; i++)
-        sum += sum << 2;
-    
-    if((num & sum) == num)
-        return 1;
-    return -1;
+    return (num > 0) && ((num & num-1) == 0) && ((num & 0x55555555) == num);
 }
 
 int main()
